@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+#TODO: figure out why I need this here and in bootstrap.yml
+spring:
+  application:
+    name: testApp
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    datasource:
+      platform: postgres
+      url: jdbc:postgresql://localhost:5432/mydb
+      username: springuser
+      password: springuser
+      driverClassName: org.postgresql.Driver
+
+ribbon:
+  ServerListRefreshInterval: 1000
+
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
