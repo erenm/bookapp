@@ -1,14 +1,15 @@
-package crud.service;
+package com.bookapp.crud.service;
 
 
-import crud.model.Author;
+import com.bookapp.crud.model.Author;
+
 import java.util.List;
 
 public interface AuthorService {
-    void addAuthor(Author Author);
+    Author createAuthor(Author Author);
     Author getAuthor(long id);
     List<Author> getAllAuthors();
     void deleteAuthor(long id);
-    void updateAuthor(Author author);
+    Author updateAuthor(Author author);
 
 }

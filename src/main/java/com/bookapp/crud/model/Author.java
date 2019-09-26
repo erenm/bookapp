@@ -1,7 +1,7 @@
-package crud.model;
+package com.bookapp.crud.model;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name="Author")
@@ -14,7 +14,7 @@ public class Author{
     private String lastName;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy="author")
-    private Set<Book> books;
+    private List<Book> books;
 
     public long getId() {
         return id;
@@ -28,8 +28,8 @@ public class Author{
         return firstName;
     }
 
-    public void setFirstsName(String firstName) {
-        this.firstsName = firstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -40,11 +40,11 @@ public class Author{
         this.lastName = lastName;
     }
 
-    public Set<Book> getBook() {
-        return book;
+    public List<Book> getBookList() {
+        return books;
     }
 
-    public void setBook(Set<Book> book) {
-        this.book = book;
+    public void setBookList(List<Book> books) {
+        this.books = books;
     }
 }

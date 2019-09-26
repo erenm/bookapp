@@ -1,19 +1,19 @@
-package crud.dto;
+package com.bookapp.crud.dto;
 
-import java.util.Set;
+import java.util.List;
 
 public class AuthorDto {
 
-    private Set<BookDto> bookDtoSet ;
+    private List<BookDto> bookDtoList;
     private String firstName;
     private String lastName;
 
-    public Set<BookDto> getBookDtoSet() {
-        return bookDtoSet;
+    public List<BookDto> getBookDtoList() {
+        return bookDtoList;
     }
 
-    public void setBookDtoSet(Set<BookDto> bookDtoSet) {
-        this.bookDtoSet = bookDtoSet;
+    public void setBookDtoList(List<BookDto> bookDtoList) {
+        this.bookDtoList = bookDtoList;
     }
 
     public String getFirstName() {

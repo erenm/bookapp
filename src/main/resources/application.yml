@@ -1,21 +1,16 @@
 server:
   port: 8080
 
-#TODO: figure out why I need this here and in bootstrap.yml
 spring:
   application:
     name: testApp
+  datasource:
+    url: jdbc:mysql://localhost:3306/bookapp
+    username: springuser
+    password: springuser
   jpa:
-    database: POSTGRESQL
-    show-sql: true
     hibernate:
-      ddl-auto: update
-    datasource:
-      platform: postgres
-      url: jdbc:postgresql://localhost:5432/mydb
-      username: springuser
-      password: springuser
-      driverClassName: org.postgresql.Driver
+      ddl-auto: create-drop
 
 ribbon:
   ServerListRefreshInterval: 1000

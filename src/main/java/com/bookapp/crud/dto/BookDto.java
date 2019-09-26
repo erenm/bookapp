@@ -1,4 +1,4 @@
-package crud.dto;
+package com.bookapp.crud.dto;
 
 public class BookDto {
 

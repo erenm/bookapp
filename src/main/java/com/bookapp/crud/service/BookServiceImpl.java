@@ -1,7 +1,9 @@
-package crud.service;
+package com.bookapp.crud.service;
 
-import crud.model.Book;
+import com.bookapp.crud.model.Book;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BookServiceImpl implements BookService{
 
     @Override

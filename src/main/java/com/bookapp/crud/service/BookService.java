@@ -1,6 +1,7 @@
-package crud.service;
+package com.bookapp.crud.service;
 
-import crud.model.Book;
+
+import com.bookapp.crud.model.Book;
 
 public interface BookService {
     void addBook(Book book);

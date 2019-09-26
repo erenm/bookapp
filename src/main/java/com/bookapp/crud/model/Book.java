@@ -1,4 +1,5 @@
-package crud.model;
+package com.bookapp.crud.model;
+
 
 import javax.persistence.*;
 

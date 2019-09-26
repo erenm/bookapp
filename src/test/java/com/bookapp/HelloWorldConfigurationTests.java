@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package crud;
+package com.bookapp;
 
 import static org.junit.Assert.*;
 
@@ -30,7 +30,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = crud.Application.class)
+@SpringBootTest(classes = com.bookapp.Application.class)
 @DirtiesContext
 public class HelloWorldConfigurationTests {
 
