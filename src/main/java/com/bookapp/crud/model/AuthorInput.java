@@ -1,19 +1,16 @@
-package com.bookapp.crud.dto;
+package com.bookapp.crud.model;
 
-import java.util.List;
-
-public class AuthorDto {
-
-    private List<BookDto> bookDtoList;
+public class AuthorInput {
+    private Long id;
     private String firstName;
     private String lastName;
 
-    public List<BookDto> getBookDtoList() {
-        return bookDtoList;
+    public Long getId() {
+        return id;
     }
 
-    public void setBookDtoList(List<BookDto> bookDtoList) {
-        this.bookDtoList = bookDtoList;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
