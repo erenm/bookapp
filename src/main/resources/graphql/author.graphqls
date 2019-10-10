@@ -1,0 +1,35 @@
+type Author{
+    id:ID!
+    firstName:String
+    lastName:String
+    books:[Book]
+}
+
+input AuthorInput{
+    id:ID
+    firstName:String
+    lastName:String
+}
+
+input CreateAuthorInput{
+    firstName:String
+    lastName:String
+}
+
+input UpdateAuthorInput{
+    id:ID!
+    firstName:String
+    LastName:String
+}
+
+type CreateAuthorPayload{
+    id:ID!
+    firstName:String
+    lastName:String
+}
+
+type UpdateAuthorPayload{
+    id:ID!
+    firstName:String
+    LastName:String
+}

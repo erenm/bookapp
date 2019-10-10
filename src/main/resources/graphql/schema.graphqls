@@ -1,19 +1,6 @@
-type Author{
-    id:ID!
-    firstName:String
-    lastName:String
-    books:[Book]
-}
-
-
-type Book{
-    id:ID!
-    title:String
-    author:Author
-}
-
 schema{
     query:Query
+    mutation:Mutation
 }
 
 type Query{
@@ -22,6 +9,10 @@ type Query{
 }
 
 type Mutation{
-    addAuthor(firstName:String, lastName:String) : Author
-    addBook(title:String, authorId:ID) : Book
+    addAuthor(author:CreateAuthorInput) : CreateAuthorPayload
+    addBook(book:CreateBookInput) : CreateBookPayload
+    updateAuthor(author:UpdateAuthorInput) : UpdateAuthorPayload
+    updateBook(book:UpdateBookInput) : UpdateBookPayload
+    deleteAuthor(id:ID):Boolean
+    deleteBook(id:ID):Boolean
 }

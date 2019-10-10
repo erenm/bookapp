@@ -1,0 +1,23 @@
+type Book{
+    id:ID!
+    title:String
+    author:Author
+}
+
+input CreateBookInput{
+    title:String
+    author:AuthorInput
+}
+
+input UpdateBookInput{
+    id:ID!
+    title:String
+}
+
+type CreateBookPayload{
+    title:String
+    author:Author
+}
+type UpdateBookPayload{
+    title:String
+}

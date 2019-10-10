@@ -1,28 +1,17 @@
-package com.bookapp.crud.model;
+package com.bookapp.crud.model.graphql;
 
+import com.bookapp.crud.model.Author;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="BOOK")
-public class Book {
-    @Id
-    @GeneratedValue
-    private long id;
-
-    @Column(unique = true)
+public class CreateBookInput {
+    private Long id;
     private String title;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "author_id")
     private Author author;
 
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

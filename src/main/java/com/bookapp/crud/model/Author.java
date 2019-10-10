@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="Author")
+@Table(name="Author", uniqueConstraints= @UniqueConstraint(columnNames = {"firstName", "lastName"}))
 public class Author{
     @Id
     @GeneratedValue
@@ -13,7 +13,7 @@ public class Author{
     private String firstName;
     private String lastName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy="author")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="author", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books;
 
     public long getId() {
