@@ -6,7 +6,7 @@ type Author{
 }
 
 input AuthorInput{
-    id:ID
+    id:ID!
     firstName:String
     lastName:String
 }

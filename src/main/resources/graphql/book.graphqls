@@ -15,9 +15,11 @@ input UpdateBookInput{
 }
 
 type CreateBookPayload{
+    id:ID!
     title:String
     author:Author
 }
 type UpdateBookPayload{
+    id:ID!
     title:String
 }
