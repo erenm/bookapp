@@ -1,13 +1,7 @@
 package com.bookapp.crud.controller;
 
-import com.bookapp.crud.service.datafetcher.author.AddAuthorDataFetcher;
-import com.bookapp.crud.service.datafetcher.author.AuthorDataFetcher;
-import com.bookapp.crud.service.datafetcher.author.AuthorListDataFetcher;
-import com.bookapp.crud.service.datafetcher.author.DeleteAuthorDataFetcher;
-import com.bookapp.crud.service.datafetcher.book.AddBookDataFetcher;
-import com.bookapp.crud.service.datafetcher.book.BookDataFetcher;
-import com.bookapp.crud.service.datafetcher.book.BookListDataFetcher;
-import com.bookapp.crud.service.datafetcher.book.DeleteBookDataFetcher;
+import com.bookapp.crud.service.datafetcher.author.*;
+import com.bookapp.crud.service.datafetcher.book.*;
 import graphql.ExecutionResult;
 import graphql.GraphQL;
 import graphql.schema.GraphQLSchema;
@@ -46,21 +40,26 @@ public class QueryController {
     private Resource allSchema;
 
     @Autowired
-    private AuthorListDataFetcher authorListDataFetcher;
-    @Autowired
     private AuthorDataFetcher authorDataFetcher;
     @Autowired
-    private DeleteAuthorDataFetcher deleteAuthorDataFetcher;
-    @Autowired
-    private DeleteBookDataFetcher deleteBookDataFetcher;
-    @Autowired
-    private BookListDataFetcher bookListDataFetcher;
-    @Autowired
-    private BookDataFetcher bookDataFetcher;
+    private AuthorListDataFetcher authorListDataFetcher;
     @Autowired
     private AddAuthorDataFetcher addAuthorDataFetcher;
     @Autowired
+    private UpdateAuthorDataFetcher updateAuthorDataFetcher;
+    @Autowired
+    private DeleteAuthorDataFetcher deleteAuthorDataFetcher;
+
+    @Autowired
+    private BookDataFetcher bookDataFetcher;
+    @Autowired
+    private BookListDataFetcher bookListDataFetcher;
+    @Autowired
     private AddBookDataFetcher addBookDataFetcher;
+    @Autowired
+    private UpdateBookDataFetcher updateBookDataFetcher;
+    @Autowired
+    private DeleteBookDataFetcher deleteBookDataFetcher;
 
 
     @PostConstruct
