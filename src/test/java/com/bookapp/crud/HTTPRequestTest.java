@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.bookapp;
+package com.bookapp.crud;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,16 +30,25 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = com.bookapp.Application.class)
-@DirtiesContext
-public class HelloWorldConfigurationTests {
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+public class HTTPRequestTest {
+
+    @LocalServerPort
+    private int port;
+
+    @Autowired
+    private TestRestTemplate restTemplate;
 
     @Test
-    public void testGreeting() throws Exception {
-        assertEquals(1, 1);
-        /*ResponseEntity<String> entity = restTemplate
-                .getForEntity("http://localhost:" + this.port + "/", String.class);
-        assertEquals(HttpStatus.OK, entity.getStatusCode());*/
+    public void getShouldReturnNotSupported() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/graphql",
+                String.class)).contains("not supported");
+    }
+
+    @Test
+    public void shouldReturn400() throws Exception {
+        assertThat(this.restTemplate.postForObject("http://localhost:" + port + "/graphql",
+                "", String.class)).contains("Required request body is missing");
     }
 
 }
