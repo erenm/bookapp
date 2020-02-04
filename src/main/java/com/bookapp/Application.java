@@ -12,20 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@RestController
 public class Application {
-
-    @Autowired
-    private AuthorService authorService;
-
-    @Autowired
-    private BookService bookService;
-
-    @RequestMapping("/")
-    public String home() {
-        return "Hello Docker World";
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
